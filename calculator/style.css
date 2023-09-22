@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 600px;
+    width: 300px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.result{
+    height: 39%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* border: 1px solid white; */
+    padding-right: 21px;
+    padding-bottom: 10px;
+}
+
+.result span{
+    /* border: 1px solid white; */
+    color: white;
+    font-size: 50px;
+}
+
+.buttons{
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding-left: 12px;
+}
+
+.item{
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+}
+
+.item1, .percent{
+    background-color: #A5a5a5a5;
+    color: black;
+    border: none;
+}
+
+.item3{
+    background-color: #ff9f0a;
+    color:white;
+    border: none;
+}
+
+.numbers{
+    background-color: #343434;
+    color: #ffffff;
+    border: none;
+}
+
+.comma{
+    background-color: #343434;
+    color: #ffffff;
+    border: none;
+}
+
+.itemZero{
+    grid-column: span 2;
+    width: 125px;
+    border-radius: 135px;
+    border: none;
+}
