@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card 2.0</title>
+    <style>
+        @font-face {
+            font-family: "OCR";
+            src: url(/fonts/OCR\ A\ Extended\ Regular.ttf);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        .card{
+            border: none;
+            width: 550px;
+            height: 350px;
+            border-radius: 20px;
+            background: linear-gradient(to bottom right, #00C0FF, #4218B8);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .head{
+            position: absolute;
+            width: 95%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+        }
+
+        .crown{
+            position: absolute;
+            font-size: 1.6rem;
+            top: 0px;
+            left: 15px;
+        }
+
+        .paypal{
+            height: 50px;
+            width: 120px;
+            position: absolute;
+            top: -5px;
+            right: 10px;
+        }
+
+        .box2{
+            height: 70px;
+            width: 95%;
+            position: relative;
+        }
+        
+        .chip{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            top: 15px;
+            left: 15px;
+        }
+
+        .wireless{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            top: 15px;
+            left: 62px
+        }
+
+        .box3{
+            height: 65px;
+            width: 95%;
+            position: relative;
+        }
+
+        .cardnum{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.9rem;
+            font-family: "OCR";
+        }
+
+
+        .box4{
+            height: 70px;
+            width: 95%;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        .box4sub{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            height: 100%;
+            width: 190px;
+
+        }
+        p{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "OCR";
+            font-size: 1.1rem;
+        }
+
+        .visa{
+            position: absolute;
+            height: 40px;
+            width: 90px;
+            right: 10px;
+        }
+
+        #randomGen{
+            height: 40px;
+            width: 100px;
+            color: black;
+            background-color: red;
+            /* text-align: center; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="head">
+            <p><span class="crown">Crown</span></p>
+            <img src="./assets/paypal.png" alt="" class="paypal">
+        </div>
+        <div class="box2">
+                <img class="chip" src="assets/chip.png" alt="chip">
+                <img class="wireless"  src="assets/contactless.png" alt="wireless">
+        </div>
+        <div class="box3">
+            <span class="cardnum" >XXXX XXXX XXXX XXXX</span>
+        </div>
+        <div class="box4">
+            <div class="box4sub">
+                <p class="date">
+                    <span>FROM</span>
+                    <span>01/19</span>
+                </p>
+                <p class="date">
+                    <span>TILL</span>
+                    <span>01/24</span>
+                </p>
+            </div>
+            <img class="visa" src="assets/visa.png" alt="vis">
+        </div>
+    </div>
+    <div class="button" id="randomGen">GEN</div>
+    <script>
+        const btn = document.querySelector('#randomGen');
+        const card = document.querySelector('.card');
+        let genRandomBg = ()=>{
+            let rand1 = 0; 
+            let rand2 = 0;
+            let rand3 = 0;
+            rand1 = Math.ceil(100000+Math.random()*900000)
+            rand2 = Math.ceil(100000+Math.random()*900000)
+            rand3 = Math.ceil(100000+Math.random()*100000)
+            let randomColor1 = "#"+rand1
+            let randomColor2 = "#"+rand2 
+            let randomColor3 = "#"+rand3
+            card.style.background = 'linear-gradient(to bottom right, '+ randomColor1 +' , ' + randomColor2 + ' , ' + randomColor3 +')';
+        }
+        btn.addEventListener('click', genRandomBg) 
+    </script>
+</body>
+</html>
